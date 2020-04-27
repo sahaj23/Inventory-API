@@ -28,12 +28,14 @@ public class EmployeeController {
 	/* to save an employee */
 	@PostMapping("/employees")
 	public Employee createEmployee(@Valid @RequestBody Employee emp) {
+		
 		return employeeDAO.save(emp);
 	}
 
 	/* get all employees */
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees() {
+		System.out.println("getAll");
 		return employeeDAO.findAll();
 	}
 

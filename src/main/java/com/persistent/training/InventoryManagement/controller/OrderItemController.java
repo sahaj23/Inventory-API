@@ -23,9 +23,15 @@ public class OrderItemController {
 
 	@PostMapping("/order-item")
 	public OrderItem createOrder(@Valid @RequestBody OrderItem orderItem) {
+		System.out.println("Order-item create called");
 		return orderItemDAO.save(orderItem);
 	}
 
+	@GetMapping("/order-item")
+	public List<OrderItem> getAllOrderItems() {
+		System.out.println("customers");
+		return orderItemDAO.findAll();
+	}
 	@GetMapping("/order-item/{id}")
 	public List<OrderItem> getOrdersByOrderId(@PathVariable(value = "id")long id) {
 		return orderItemDAO.getOrdersByOrderId(id);

@@ -1,5 +1,6 @@
 package com.persistent.training.InventoryManagement.dao;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,10 @@ public class CustomerDAO {
 		return customerRepository.save(cust);
 	}
 	
-	
+	public Optional<Customer> findOne(Long custId) {
+		// return null;
+		return customerRepository.findById(custId);
+	}
 	/* search all customers*/
 	
 	public List<Customer> findAll(){

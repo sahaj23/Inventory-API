@@ -27,6 +27,7 @@ public class ProductController {
 	/* to save an employee */
 	@PostMapping("/products")
 	public Product createProduct(@Valid @RequestBody Product prod) {
+		System.out.println("Product create called");
 		return productDAO.save(prod);
 	}
 
@@ -39,7 +40,7 @@ public class ProductController {
 	/* get employee by empid */
 	@GetMapping("/products/{id}")
 	public ResponseEntity<Product> getProductById(@PathVariable(value = "id") Long prodId) {
-
+		System.out.println("Product getbyid called");
 		Optional<Product> prod = productDAO.findOne(prodId);
 
 		if (prod == null) {

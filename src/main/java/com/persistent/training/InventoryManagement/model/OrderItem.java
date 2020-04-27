@@ -17,6 +17,10 @@ import com.persistent.training.InventoryManagement.dao.OrderItemId;
 @EntityListeners(AuditingEntityListener.class)
 @IdClass(OrderItemId.class)
 public class OrderItem implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private Long oid;
 	@Id

@@ -13,6 +13,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name="Customers")
 @EntityListeners(AuditingEntityListener.class)
 public class Customer {
+	@Override
+	public String toString() {
+		return "Customer [cid=" + cid + ", name=" + name + ", phone=" + phone + ", email=" + email + ", address="
+				+ address + "]";
+	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long cid;

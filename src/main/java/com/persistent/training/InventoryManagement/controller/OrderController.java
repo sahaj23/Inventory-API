@@ -22,6 +22,7 @@ public class OrderController {
 
 	@PostMapping("/orders")
 	public Order createOrder(@Valid @RequestBody Order order) {
+		System.out.println("Order create called");
 		return orderDAO.save(order);
 	}
 

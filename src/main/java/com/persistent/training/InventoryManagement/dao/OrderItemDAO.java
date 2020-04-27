@@ -24,4 +24,10 @@ public class OrderItemDAO {
 	public List<OrderItem> getOrdersByOrderId(long id){
 		return orderItemRepository.getOrdersByOrderId(id);
 	}
+
+
+	public List<OrderItem> findAll() {
+		
+		return orderItemRepository.findAll();
+	}
 }
